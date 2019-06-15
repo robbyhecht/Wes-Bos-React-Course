@@ -25,9 +25,7 @@ class App extends React.Component {
     };
 
     addToOrder = key => {
-        // 1. take a copy of state
-        // 2. Either add to order or update the number in our order
-        // 3. Update our state object
+        // ***
         const order = { ...this.state.order };
         order[key] = order[key] + 1 || 1;
         this.setState({ order });
@@ -49,7 +47,7 @@ class App extends React.Component {
                         ))}
                     </ul>
                 </div>
-                <Order />
+                <Order fishes={this.state.fishes} order={this.state.order}/>
                 <Inventory
                     addFish={this.addFish}
                     loadSampleFishes={this.loadSampleFishes}
@@ -68,3 +66,7 @@ export default App;
  // 2. Add out new fish to the fishes variable
  // 3. Set the new fishes object to state
 
+// ***
+// 1. take a copy of state
+// 2. Either add to order or update the number in our order
+// 3. Update our state object
